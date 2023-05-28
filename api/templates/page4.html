@@ -55,15 +55,17 @@ height: 100px
 margin-top: 680px
 }
 
-
+#bottomimg:hover{
+    cursor:pointer;
+}
 
 
 
   </style>
   <body>
       <div id="bottom">
-        <img 'bottomimg' class="img-responsive" src="static/homebutton.png" onmouseover="this.src='static/clickhome.png'" onmouseout="this.src='static/homebutton.png'" onclick="homePage(this)" style="height:80px; margin-right: 855px;"/>
-        <img 'bottomimg' class="img-responsive" src="static/donebutton.png" onmouseover="this.src='static/clickright.png'" onmouseout="this.src='static/donebutton.png'" onclick="nextPage(this)" style="height:80px"/>
+        <img id='bottomimg' class="img-responsive" src="static/homebutton.png" onmouseover="this.src='static/clickhome.png'" onmouseout="this.src='static/homebutton.png'" onclick="homePage(this)" style="height:80px; margin-right: 855px;"/>
+        <img id='bottomimg' class="img-responsive" src="static/donebutton.png" onmouseover="this.src='static/clickright.png'" onmouseout="this.src='static/donebutton.png'" onclick="nextPage(this)" style="height:80px"/>
       </div>
 
 

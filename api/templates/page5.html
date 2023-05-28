@@ -21,7 +21,7 @@ width: 100%
 }
 
   body {
-    background-image: url('static/page1.png');
+    background-image: url('static/page5.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
@@ -30,6 +30,14 @@ width: 100%
 
 .col {
     background-image: url('static/icon_background.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100px;
+
+}
+.col_gray {
+    background-image: url('static/gray.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
@@ -55,36 +63,46 @@ height: 100px
     margin-top: 560px;
 }
 
-
-
 #bottomimg:hover{
-    cursor: pointer;
+    cursor: pointer
 }
+
 
 
   </style>
   <body>
     <div class="container">
       <div class="row rect">
-          <div class="col-md-3 text-center">
+          <div class="col-md-1 text-center">
+          </div>
+          <div class="col-md-2 col  text-center align-middle">
+                <div id='draggable5' style='width:150px; height:90px; margin:0px 0px;'>
+              <img class="middle img-responsive" src="static/hat.png" style='width:100%; height:100%;'/>
+                </div>
+
           </div>
           <div class="col-md-2 col  text-center align-middle">
                 <div id='draggable1' style='width:150px; height:90px; margin:0px 0px;'>
-              <img class="middle img-responsive" src="static/mountain.png" style='width:100%; height:100%;'/>
+              <img class="middle img-responsive" src="static/green.png" style='width:100%; height:100%;'/>
                 </div>
 
           </div>
           <div class="col-md-2 col text-center">
                 <div id='draggable2' style='width:150px; height:90px;margin:0px 0px;'>
-              <img class="middle img-responsive" src="static/bird.png"  style="width:100%; height:100%;"/>
+              <img class="middle img-responsive" src="static/person.png"  style="width:100%; height:100%;"/>
                 </div>
           </div>
           <div class="col-md-2 col text-center">
                 <div id='draggable3' style='width:150px; height:90px;margin: 0px 0px;'>
-              <img class="img-responsive middle" src="static/bird2.png" style="width:100%; height:100%;"/>
+              <img class="img-responsive middle" src="static/sun.png" style="width:100%; height:100%;"/>
                 </div>
           </div>
-          <div class="col-md-3 text-center">
+          <div class="col-md-2 col_gray text-center">
+                <div id='draggable4' style='width:150px; height:90px;margin: 0px 0px;'>
+              <img class="img-responsive middle" src="static/rain.png" style="width:100%; height:100%;"/>
+                </div>
+          </div>
+          <div class="col-md-1 text-center">
           </div>
       </div>
 
@@ -108,9 +126,15 @@ height: 100px
           $( function() {
             $( "#draggable3" ).resizable().draggable();
           } );
+          $( function() {
+            $( "#draggable4" ).resizable().draggable();
+          } );
+          $( function() {
+            $( "#draggable5" ).resizable().draggable();
+          } );
 
         function nextPage(image) {
-            window.location.href = "page2";
+            window.location.href = "page6";
         }
         function homePage(image) {
             window.location.href = "/";
