@@ -71,6 +71,21 @@ height: 100px
     cursor: pointer
 }
 
+#draggable1 {
+  z-index: 4
+}
+#draggable2 {
+  z-index: 3
+}
+#draggable3 {
+  z-index: 2
+}
+#draggable4 {
+  z-index: 1
+}
+#draggable5 {
+  z-index: 5
+}
 
 
   </style>
@@ -81,29 +96,29 @@ height: 100px
           </div>
           <div class="col-md-2 col  text-center align-middle">
                 <div id='draggable5' style='width:150px; height:90px; margin:0px 0px;'>
-              <img class="middle img-responsive" src="static/hat.png" style='width:100%; height:100%;'/>
+              <img id="img5" class="middle img-responsive" src="static/hat.png" style='width:100%; height:100%;'/>
                 </div>
 
           </div>
           <div class="col-md-2 col  text-center align-middle">
                 <div id='draggable1' style='width:150px; height:90px; margin:0px 0px;'>
-              <img class="middle img-responsive" src="static/green.png" style='width:100%; height:100%;'/>
+              <img id="img1" class="middle img-responsive" src="static/green.png" style='width:100%; height:100%;'/>
                 </div>
 
           </div>
           <div class="col-md-2 col text-center">
                 <div id='draggable2' style='width:150px; height:90px;margin:0px 0px;'>
-              <img class="middle img-responsive" src="static/person.png"  style="width:100%; height:100%;"/>
+              <img id="img2" class="middle img-responsive" src="static/person.png"  style="width:100%; height:100%;"/>
                 </div>
           </div>
           <div class="col-md-2 col text-center">
                 <div id='draggable3' style='width:150px; height:90px;margin: 0px 0px;'>
-              <img class="img-responsive middle" src="static/sun.png" style="width:100%; height:100%;"/>
+              <img id="img3" class="img-responsive middle" src="static/sun.png" style="width:100%; height:100%;"/>
                 </div>
           </div>
           <div class="col-md-2 col_gray text-center">
                 <div id='draggable4' style='width:150px; height:90px;margin: 0px 0px;'>
-              <img class="img-responsive middle" src="static/rain.png" style="width:100%; height:100%;"/>
+              <img id="img4" class="img-responsive middle" src="static/rain.png" style="width:100%; height:100%;"/>
                 </div>
           </div>
           <div class="col-md-1 text-center">
@@ -136,6 +151,28 @@ height: 100px
           $( function() {
             $( "#draggable5" ).resizable().draggable();
           } );
+
+         var max_zindex=5;
+         $('#draggable1').on("dblclick", function(){
+            max_zindex+=1;
+            $("#draggable1").css('z-index',max_zindex);
+        });
+         $('#draggable2').on("dblclick", function(){
+            max_zindex+=1;
+            $("#draggable2").css('z-index',max_zindex);
+        });
+         $('#draggable3').on("dblclick", function(){
+            max_zindex+=1;
+            $("#draggable3").css('z-index',max_zindex);
+        });
+         $('#draggable4').on("dblclick", function(){
+            max_zindex+=1;
+            $("#draggable").css('z-index',max_zindex);
+        });
+         $('#draggable5').on("dblclick",function(){
+            max_zindex+=1;
+            $("#draggable5").css('z-index',max_zindex);
+        });
 
         function nextPage(image) {
             window.location.href = "page6";

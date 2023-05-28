@@ -65,6 +65,15 @@ height: 100px
     cursor: pointer;
 }
 
+#draggable1 {
+  z-index: 1
+}
+#draggable2 {
+  z-index: 2
+}
+#draggable3 {
+  z-index: 3
+}
 
   </style>
   <body>
@@ -112,6 +121,19 @@ height: 100px
           $( function() {
             $( "#draggable3" ).resizable().draggable();
           } );
+         var max_zindex=3;
+         $('#draggable1').on("dblclick", function(){
+            max_zindex+=1;
+            $("#draggable1").css('z-index',max_zindex);
+        });
+         $('#draggable2').on("dblclick", function(){
+            max_zindex+=1;
+            $("#draggable2").css('z-index',max_zindex);
+        });
+         $('#draggable3').on("dblclick", function(){
+            max_zindex+=1;
+            $("#draggable3").css('z-index',max_zindex);
+        });
 
         function nextPage(image) {
             window.location.href = "page2";
