@@ -13,6 +13,10 @@ app = Flask(__name__,  static_url_path='/static', template_folder='./templates')
 def index():
     return render_template('index.html')
 
+@app.route('/page0')
+def page0():
+    return render_template('page0.html')
+
 @app.route('/page1')
 def page1():
     return render_template('page1.html')
@@ -36,6 +40,14 @@ def page5():
 @app.route('/page6')
 def page6():
     return render_template('page6.html')
+
+@app.route('/page7')
+def page7():
+    return render_template('page7.html')
+
+@app.route('/page8')
+def page8():
+    return render_template('page8.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
