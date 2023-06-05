@@ -158,6 +158,7 @@ def midjourney3():
 
 @app.route('/')
 def index():
+    print('folder path', os.getcwd())
     return render_template('index.html')
 
 @app.route('/page0')
