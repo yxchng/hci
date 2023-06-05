@@ -150,26 +150,26 @@ class MidjourneyClient:
                 img_url = message['attachments'][0]['url']
                 r = requests.get(img_url, headers=headers, allow_redirects=False)
                 if 'white' in img_url:
-                    with open('static/result1.png', 'wb') as fh:
+                    with open('/var/task/static/result1.png', 'wb') as fh:
                         fh.write(r.content)
-                    img = Image.open('static/result1.png')
+                    img = Image.open('/var/task/static/result1.png')
                     box = (1456, 816, 2912, 1632)
                     img_crop = img.crop(box)
-                    img_crop.save('static/result1_crop.png')
+                    img_crop.save('/var/task/static/result1_crop.png')
                 elif 'peach' in img_url:
-                    with open('static/result2.png', 'wb') as fh:
+                    with open('/var/task/static/result2.png', 'wb') as fh:
                         fh.write(r.content)
-                    img = Image.open('static/result2.png')
+                    img = Image.open('/var/task/static/result2.png')
                     box = (1456, 816, 2912, 1632)
                     img_crop = img.crop(box)
-                    img_crop.save('static/result2_crop.png')
+                    img_crop.save('/var/task/static/result2_crop.png')
                 elif 'fisherman' in img_url:
-                    with open('static/result3.png', 'wb') as fh:
+                    with open('/var/task/static/result3.png', 'wb') as fh:
                         fh.write(r.content)
                     img = Image.open('static/result3.png')
                     box = (1456, 816, 2912, 1632)
                     img_crop = img.crop(box)
-                    img_crop.save('static/result3_crop.png')
+                    img_crop.save('/var/task/static/result3_crop.png')
 
                 #if os.path.exists('static/TEMP.txt'):
                 #    os.remove('static/TEMP.txt')

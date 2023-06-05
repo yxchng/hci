@@ -159,6 +159,11 @@ def midjourney3():
 @app.route('/')
 def index():
     print('folder path', os.getcwd())
+    directory_list = list()
+    for root, dirs, files in os.walk(os.getcwd(), topdown=False):
+        for name in dirs:
+            directory_list.append(os.path.join(root, name))
+    print(directory_list)
     return render_template('index.html')
 
 @app.route('/page0')
