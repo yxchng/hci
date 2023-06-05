@@ -16,6 +16,7 @@ def process_message(message):
     sys.stdout.flush()
 app = Flask(__name__,  static_url_path='/static', template_folder='./templates')
 
+print("CURRENT WORKING DIR", os.getcwd())
 
 
 #@app.route('/midjourney1')
