@@ -21,7 +21,7 @@ width: 100%
 }
 
   body {
-    background-image: url('static/result2_crop.png');
+    #background-image: url('static/result2_crop.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
@@ -86,6 +86,22 @@ margin-top: 680px
     <script>
         reading = false;
       timer = false;
+
+       function randomIntFromInterval(min, max) { // min and max included 
+        return Math.floor(Math.random() * (max - min + 1) + min)
+      }
+
+
+
+      $.ajax({'url': 'getlatest1'}).done(function (response) {
+        console.log(response);
+        
+        const rndInt = randomIntFromInterval(1, 4)
+        $('body').css('background-image', 'url(static/second' + rndInt.toString() +'.png)');
+      });
+
+
+
       function googleSpeech(text, rate) {
           console.log(reading)
           if (!reading) {

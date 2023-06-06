@@ -105,6 +105,8 @@ height: 100px
         <img id='bottomimg' class="img-responsive" src="static/donebutton.png" onmouseover="this.src='static/clickright.png'" onmouseout="this.src='static/donebutton.png'" onclick="nextPage(this)" style="height:80px"/>
       </div>
 
+      <div id='progressbar'></div>
+
        <audio autoplay id="playAudio">
     <source src="static/2.mp3">
 </audio>
@@ -137,8 +139,35 @@ height: 100px
             $("#draggable3").css('z-index',max_zindex);
         });
         function nextPage(image) {
-            window.location.href = "page4";
+
+        
+            $.ajax({'url': 'midjourney2'})
+            
+            $("html").css("cursor", "progress");
+
+            var progress = document.createElement('div');
+            progress.className = "progress progress-striped active"
+            var bar = document.createElement('div');
+            bar.className = "progress-bar progress-bar-success"
+            bar.style = "width: 0%"
+            progress.appendChild(bar)
+            progressbar.appendChild(progress)
+            $(".progress-bar").animate({
+              width: "100%"
+            }, 5000);
+  
+              // Something you want delayed.
+            setTimeout(function (){
+  
+              // Something you want delayed.
+              window.location.href = "page4";
+                        
+            }, 5000); // How long you want the delay to be, measured in milliseconds.
         }
+
+
+
+
         function homePage(image) {
             window.location.href = "/";
         }
