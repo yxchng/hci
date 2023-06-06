@@ -88,14 +88,17 @@ margin-top: 680px
       timer = false;
 
 
+      function randomIntFromInterval(min, max) { // min and max included 
+        return Math.floor(Math.random() * (max - min + 1) + min)
+      }
+
+
+
       $.ajax({'url': 'getlatest1'}).done(function (response) {
         console.log(response);
         
-        if (response['url'] != '') {
-          $('body').css('background-image', 'url(' + response["url"] +')');
-        } else {
-          $('body').css('background-image', 'url("static/result1_crop.png")');
-        }
+        const rndInt = randomIntFromInterval(1, 21)
+        $('body').css('background-image', 'url(static/mid' + rndInt.toString() +'.png)');
       });
 
       function googleSpeech(text, rate) {
