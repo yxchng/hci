@@ -219,7 +219,7 @@ def index():
     for root, dirs, files in os.walk(os.getcwd(), topdown=False):
         for name in dirs:
             directory_list.append(os.path.join(root, name))
-    print(directory_list)
+    #print(directory_list)
     return render_template('index.html')
 
 @app.route('/page0')

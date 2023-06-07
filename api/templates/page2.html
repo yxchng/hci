@@ -94,12 +94,9 @@ margin-top: 680px
 
 
 
-      $.ajax({'url': 'getlatest1'}).done(function (response) {
-        console.log(response);
         
-        const rndInt = randomIntFromInterval(1, 21)
-        $('body').css('background-image', 'url(static/mid' + rndInt.toString() +'.png)');
-      });
+      const rndInt = randomIntFromInterval(1, 21)
+      $('body').css('background-image', 'url(static/mid' + rndInt.toString() +'.png)');
 
       function googleSpeech(text, rate) {
           console.log(reading)
